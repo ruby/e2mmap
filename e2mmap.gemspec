@@ -1,11 +1,8 @@
-
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "e2mmap/version"
+require_relative "lib/e2mmap"
 
 Gem::Specification.new do |spec|
   spec.name          = "e2mmap"
-  spec.version       = E2mmap::VERSION
+  spec.version       = E2MM::VERSION
   spec.authors       = ["SHIBATA Hiroshi"]
   spec.email         = ["hsbt@ruby-lang.org"]
 
