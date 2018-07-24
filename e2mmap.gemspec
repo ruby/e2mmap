@@ -2,7 +2,7 @@ require_relative "lib/e2mmap/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "e2mmap"
-  spec.version       = E2MM::VERSION
+  spec.version       = Exception2MessageMapper::VERSION
   spec.authors       = ["Keiju ISHITSUKA"]
   spec.email         = ["keiju@ruby-lang.org"]
 
