@@ -1,4 +1,4 @@
-require_relative "lib/e2mmap"
+require_relative "lib/e2mmap/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "e2mmap"
