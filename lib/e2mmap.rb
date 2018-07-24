@@ -53,6 +53,7 @@
 #
 #
 module Exception2MessageMapper
+
   E2MM = Exception2MessageMapper # :nodoc:
 
   def E2MM.extend_object(cl)
