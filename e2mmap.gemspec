@@ -1,4 +1,9 @@
-require_relative "lib/e2mmap/version"
+begin
+  require_relative "lib/e2mmap/version"
+rescue LoadError
+  # for Ruby core repository
+  require_relative "e2mmap/version"
+end
 
 Gem::Specification.new do |spec|
   spec.name          = "e2mmap"
