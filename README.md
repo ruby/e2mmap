@@ -1,8 +1,6 @@
-# E2mmap
+# Exception2MessageMapper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/e2mmap`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Helper module for easily defining exceptions with predefined messages.
 
 ## Installation
 
@@ -22,7 +20,55 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1.
+
+```
+class Foo
+  extend Exception2MessageMapper
+  def_e2message ExistingExceptionClass, "message..."
+  def_exception :NewExceptionClass, "message..."[, superclass]
+  ...
+end
+```
+
+2.
+
+```
+module Error
+  extend Exception2MessageMapper
+  def_e2message ExistingExceptionClass, "message..."
+  def_exception :NewExceptionClass, "message..."[, superclass]
+  ...
+end
+
+class Foo
+  include Error
+  ...
+end
+
+foo = Foo.new
+foo.Fail ....
+```
+
+3.
+
+```
+module Error
+  extend Exception2MessageMapper
+  def_e2message ExistingExceptionClass, "message..."
+  def_exception :NewExceptionClass, "message..."[, superclass]
+  ...
+end
+
+class Foo
+  extend Exception2MessageMapper
+  include Error
+  ...
+end
+
+Foo.Fail NewExceptionClass, arg...
+Foo.Fail ExistingExceptionClass, arg...
+```
 
 ## Development
 
